@@ -18,7 +18,7 @@ const handler = NextAuth({
 
       return session;
     },
-    async signIn({ profile }) {
+    async signIn({ account, profile, user, credentials }) {
       try {
         //! serverless route -> lambda -> dynamodb
         await connectToDB();
